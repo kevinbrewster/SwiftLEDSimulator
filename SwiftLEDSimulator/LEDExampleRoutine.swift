@@ -14,27 +14,27 @@ extension LEDStrip {
     func runExampleRoutine() {
         let rainbow = Gradient(.red, .green, .blue, .red)
         
-        chain {
+        sequence {
             // Single LED run
-            animate(Color.red, start: 0..<1, end: 45..<46, duration: 2.0)
+            animate(.red, start: 0..<1, end: 45..<46, duration: 2.0)
             fill(.black)
-            animate(Color.green, start: 0..<1, end: 45..<46, duration: 2.0)
+            animate(.green, start: 0..<1, end: 45..<46, duration: 2.0)
             fill(.black)
-            animate(Color.blue, start: 0..<1, end: 45..<46, duration: 2.0)
+            animate(.blue, start: 0..<1, end: 45..<46, duration: 2.0)
             fill(.black)
             
             // Dual LED run (Counter Clockwise)
-            animate(Color.red, start: 45..<47, end: 0..<2, duration: 2.0)
+            animate(.red, start: 45..<47, end: 0..<2, duration: 2.0)
             fill(.black)
-            animate(Color.green, start: 0..<2, end: 45..<47, duration: 2.0)
+            animate(.green, start: 0..<2, end: 45..<47, duration: 2.0)
             fill(.black)
-            animate(Color.blue, start: 45..<47, end: 0..<2, duration: 2.0)
+            animate(.blue, start: 45..<47, end: 0..<2, duration: 2.0)
             fill(.black)
             
             // Color Wipes
-            animate(Color.red, start: 0..<1, end: 0..<45, duration: 1.0)
-            animate(Color.green, start: 0..<1, end: 0..<45, duration: 1.0)
-            animate(Color.blue, start: 0..<1, end: 0..<45, duration: 1.0)
+            animate(.red, start: 0..<1, end: 0..<45, duration: 1.0)
+            animate(.green, start: 0..<1, end: 0..<45, duration: 1.0)
+            animate(.blue, start: 0..<1, end: 0..<45, duration: 1.0)
             fill(.black)
              
             // Comet
@@ -44,7 +44,7 @@ extension LEDStrip {
             fill(.black)
             
             // Theatre Chase
-            threatreChase(Color.red, repeatCount: 30)
+            threatreChase(.red, repeatCount: 30)
             fill(.black)
             threatreChase(rainbow, repeatCount: 30)
             
